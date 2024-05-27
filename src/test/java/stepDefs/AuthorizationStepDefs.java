@@ -1,6 +1,7 @@
 package stepDefs;
 
 import common.ConfigUtils;
+import common.EncryptionUtils;
 import common.Helper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,7 +11,6 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.asserts.SoftAssert;
 
-import static common.EncryptionUtils.decode;
 import static common.RequestBodies.createUser;
 
 public class AuthorizationStepDefs {
@@ -25,7 +25,7 @@ public class AuthorizationStepDefs {
 
     @Given("a user with username {string} and password {string}")
     public void requestForUser(String username, String password) {
-        RestAssured.baseURI = uri;;
+        RestAssured.baseURI = uri;
         request = RestAssured.given()
                 .header(contentType, responseType)
                 .body(createUser.replace("PARAM1", username)
@@ -63,11 +63,11 @@ public class AuthorizationStepDefs {
     @Given("a user with correct username and password")
     public void correctUsernamePass() {
         RestAssured.baseURI = uri;
-        String encryptedPass = ConfigUtils.getProperty("encrypted_password");
+        String decryptedPassword = EncryptionUtils.decode(ConfigUtils.getProperty("encrypted_password"));
         request = RestAssured.given()
                 .header(contentType, responseType)
                 .body(createUser.replace("PARAM1",ConfigUtils.getProperty("username"))
-                        .replace("PARAM2", decode(encryptedPass)));
+                        .replace("PARAM2",decryptedPassword));
     }
 
     @When("A request sent to {string} to delete user {string} with password {string}")
