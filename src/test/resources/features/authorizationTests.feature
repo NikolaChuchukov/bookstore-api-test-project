@@ -8,7 +8,7 @@ Feature: Testing the Authorization in the api
     And the response should contain a "token"
 
   @Auth
-  Scenario: Successfully authorize a user and get a token
+  Scenario: Successfully authorize a user
     Given a user with correct username and password
     When the user sends the request to "Account/v1/Authorized"
     Then Response status code should be 200
@@ -22,7 +22,7 @@ Feature: Testing the Authorization in the api
     Then Response status code should be 204
 
   @Auth @Negative
-  Scenario: User exists
+  Scenario: Verify the api returns User exists exception
     Given a user with correct username and password
     When the user sends the request to "/Account/v1/User"
     Then Response status code should be 406
