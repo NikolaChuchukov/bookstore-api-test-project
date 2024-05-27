@@ -21,5 +21,8 @@ This is a maven project build in java 11, using TestNG framework and tools such 
 ## Generating a report
 
 Results of the tests are stored in the target/allure-results directory. To generate report, after the test run, run the following command in terminal "allure generate target/allure-results".
-If you want to see the report immidiately you can run "allure serve target/allure-results" and the report will be opened in the default browser. There is a report example in the source of this github repo under allure-report.
+
+If you want to see the report immidiately you can run "allure serve target/allure-results" and the report will be opened in the default browser.
+
+There is a report example in the source of this github repo under allure-report. To see it you can open the index.html file in a browser.
 
