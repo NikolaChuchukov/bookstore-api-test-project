@@ -1,7 +1,6 @@
 package stepDefs;
 
 import common.ConfigUtils;
-import common.EncryptionUtils;
 import common.Helper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,7 +11,6 @@ import io.restassured.specification.RequestSpecification;
 import org.testng.asserts.SoftAssert;
 
 import static common.EncryptionUtils.decode;
-import static common.Helper.token;
 import static common.RequestBodies.createUser;
 
 public class AuthorizationStepDefs {
