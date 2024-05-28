@@ -31,9 +31,9 @@ Cucumber runner: src/test/java/runner
 
 The framework is creating an Allure report after each test run. To install Allure please follow the steps described in the Allure documentation - https://allurereport.org/docs/install/
 
-Results of the tests are stored in the target/allure-results directory. To generate report, after the test run, execute the following command in the terminal "allure generate target/allure-results".
+Results of the tests are stored in the target/allure-results directory. To generate report, after the test run, execute the following command in the terminal "allure generate target/allure-results --clean".
 
-If you want to see the report immidiately you can run "allure serve target/allure-results" and the report will be opened in the default browser.
+If you want to see the report immidiately you can run "allure serve target/allure-results --clean" and the report will be opened in the default browser.
 
 There is a report example in the source of this github repo under allure-report. To see it you can open the index.html file in a browser.
 
