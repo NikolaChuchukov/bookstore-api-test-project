@@ -6,6 +6,12 @@ This is a project for testing the main functionalities of bookstore api. It incl
 
 This is a maven project build in java 11, using TestNG framework and tools such as Cucumber.
 
+Feature files with the test scenarios: src/test/resources/features/
+Step definitions with implemented steps: src/test/java/stepDefs
+Common directory containing different helper classes: src/test/java/common
+Cucumber runner: src/test/java/runner
+
+
 ## Steps to build
 
 ### Run from console
