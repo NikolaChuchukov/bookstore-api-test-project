@@ -2,7 +2,7 @@ Feature: Testing the book functionalities in the api
 
   @Books
   Scenario: Get all books
-    Given User sends a GET request to "/BookStore/v1/Books"
+    When User sends a GET request to "/BookStore/v1/Books"
     Then the response status code should be 200
     And the response should contain a list of books
 
@@ -11,7 +11,7 @@ Feature: Testing the book functionalities in the api
     Given A token is generated
     When User gets a book with ISBN "9781449325862"
     Then the response status code should be 200
-    Then the book details should be as follows:
+    And the book details should be as follows:
       | key      | value                     |
       | isbn     | 9781449325862             |
       | title    | Git Pocket Guide          |

@@ -16,8 +16,8 @@ Feature: Testing the Authorization in the api
   @Auth
   Scenario: Create and delete a user
     Given a user with username "TestAccount1111" and password "Password123!"
-    When the user sends the request to "/Account/v1/User"
-    Then Response status code should be 201
+    And the user sends the request to "/Account/v1/User"
+    And Response status code should be 201
     When A request sent to "/Account/v1/User/" to delete user "TestAccount1111" with password "Password123!"
     Then Response status code should be 204
 

@@ -16,7 +16,7 @@ Feature: Managing user collection
   Scenario Outline: Update a specific book
     Given the user adds a new book with ISBN <oldIsbn> and title <title>
     And the response status code should be 201
-    Given User puts a book with ISBN <newIsbn> to replace <oldIsbn>
+    When User puts a book with ISBN <newIsbn> to replace <oldIsbn>
     Then the response status code should be 200
     And the response should contain the book with ISBN <newIsbn> and title <title>
     And the user deletes the book with ISBN <newIsbn> from the collection
